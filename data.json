@@ -1,0 +1,45 @@
+[
+  {
+    "id": "matcha",
+    "title": "Ice Matcha",
+    "price": "10$",
+    "image": "images/matcha.jpg",
+    "badge": "Free Delivery until 16/06/2026",
+    "themeClass": "matcha-theme",
+    "bgClass": "matcha-bg",
+    "tags": [
+      "Matcha",
+      "Ice Cubes",
+      "Honey",
+      "Milk"
+    ]
+  },
+  {
+    "id": "lavender",
+    "title": "Lavender Latte",
+    "price": "12$",
+    "image": "images/lavender.png",
+    "badge": "New Seasonal Drink",
+    "themeClass": "lavender-theme",
+    "bgClass": "lavender-bg",
+    "tags": [
+      "Lavender",
+      "Oat Milk",
+      "Syrup"
+    ]
+  },
+  {
+    "id": "hibiscus",
+    "title": "Hibiscus Tea",
+    "price": "8$",
+    "image": "images/hibiscus.png",
+    "badge": "Refreshed Recipe",
+    "themeClass": "hibiscus-theme",
+    "bgClass": "hibiscus-bg",
+    "tags": [
+      "Hibiscus",
+      "Mint",
+      "Ice"
+    ]
+  }
+]
