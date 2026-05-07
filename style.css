@@ -11,7 +11,7 @@
     --text-muted: #555555;
     --tag-bg: #e2e4d5;
 
-    --outer-radius: 4rem;
+    --outer-radius: 3rem;
     --inner-radius: 3rem;
 }
 
@@ -33,18 +33,22 @@ body {
 }
 
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2.5rem;
-    max-width: 1200px;
-    margin-bottom: 3rem;
+    max-width: 1920px;
+    margin: 0 auto 3rem auto;
 }
 
 .product-card {
+    flex: 0 1 calc((100% - 5rem) / 3);
+    /* 3 cards per row */
+    min-width: 400px;
     position: relative;
     background: var(--card-bg);
     border-radius: var(--outer-radius);
-    padding: 1.2rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
@@ -57,7 +61,7 @@ body {
 }
 
 .card-visual-group {
-    border-radius: var(--inner-radius);
+    border-radius: calc(var(--inner-radius) - 0.5rem);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -65,7 +69,7 @@ body {
 
 .card-image-wrapper {
     position: relative;
-    border-radius: var(--inner-radius);
+    border-radius: calc(var(--inner-radius) - 0.5rem);
     height: 380px;
     overflow: hidden;
 }
@@ -83,8 +87,8 @@ body {
 
 .price-tag {
     position: absolute;
-    top: 1.2rem;
-    right: 1.2rem;
+    top: 0.5rem;
+    right: 0.5rem;
     background: #ffffff;
     padding: 0.5rem 1.5rem;
     font-size: 1.8rem;
@@ -92,10 +96,6 @@ body {
     border-radius: 0 2rem;
     z-index: 2;
     transition: transform 0.3s ease;
-}
-
-.product-card:hover .price-tag {
-    transform: scale(1.05);
 }
 
 .price-tag::before,
@@ -112,22 +112,22 @@ body {
     top: 0;
     left: -1rem;
     border-radius: 0 1rem 0 0;
-    box-shadow: 0.5rem -0.5rem 0 0.5rem var(--card-bg);
+    box-shadow: 0.25rem -0.25rem 0 0.25rem var(--card-bg);
 }
 
 .price-tag::after {
     bottom: -1rem;
     right: 0;
     border-radius: 0 1rem 0 0;
-    box-shadow: 0.5rem -0.5rem 0 0.5rem var(--card-bg);
+    box-shadow: 0.25rem -0.25rem 0 0.25rem var(--card-bg);
 }
 
 .delivery-bar {
     color: #ffffff;
-    padding: 0.6rem;
+    padding: 0.25rem;
     text-align: center;
     font-size: 0.85rem;
-    font-weight: 400;
+    font-weight: 200;
 }
 
 .card-info {
@@ -137,7 +137,7 @@ body {
 .info-header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     margin-bottom: 1.5rem;
     gap: 1rem;
 }
@@ -233,15 +233,15 @@ footer a {
 
 @media (max-width: 1200px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
         padding: 0 1rem;
     }
 
     .product-card {
+        flex: 0 1 calc((100% - 2rem) / 2);
+        /* 2 cards per row */
         border-radius: 3rem;
         padding: 1.5rem;
-        transform: rotate(0);
     }
 
     .product-title {
@@ -258,8 +258,8 @@ footer a {
 }
 
 @media (max-width: 640px) {
-    .product-grid {
-        grid-template-columns: 1fr;
+    .product-card {
+        flex: 0 1 100%;
     }
 
     .card-image-wrapper {
